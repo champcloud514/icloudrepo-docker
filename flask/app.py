@@ -7,7 +7,7 @@ cache = redis.Redis(host='redis', port=6379)
 @app.route('/')
 def hello():
     count = cache.incr('hits')
-    return f"Hello! This page has been visited {count} times."
+    return f"Hello! I have been seen {count} times.\n"
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host="0.0.0.0", port=5000)
